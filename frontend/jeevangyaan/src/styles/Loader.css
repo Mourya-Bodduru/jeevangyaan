@@ -1,0 +1,91 @@
+.loader-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-logo {
+  width: 120px;
+  animation: zoomFade 3s ease-in-out infinite;
+}
+
+.loader-text {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin-top: 15px;
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  
+  /* Gradient Text */
+  background: linear-gradient(90deg, #ee0663, #ff9a3c, #ee0663);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Glow Effect */
+  text-shadow: 0 0 10px rgba(238, 6, 99, 0.4);
+
+  /* Animation */
+  animation: 
+    gradientMove 3s linear infinite,
+    pulse 3s ease-in-out infinite;
+}
+
+/* Gradient movement */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Fade + Scale pulse */
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+/* Logo animation */
+@keyframes zoomFade {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+/* Text animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}

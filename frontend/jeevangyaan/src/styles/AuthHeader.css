@@ -1,0 +1,59 @@
+.auth-navbar {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 15px 60px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #000;
+  transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #ff6b00;
+}
+
+.auth-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.auth-center img {
+  width: 45px;
+}
+
+.home-btn {
+  padding: 6px 15px;
+  border: 2px solid #000;
+  background: #ff6b00;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: #000 3px 3px 0px;
+  color: white;
+  font-weight:bold;
+}
+
+.home-btn:hover {
+    box-shadow: none;
+  transform: translateY(1px);
+}
+
+.btnspace{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+
+}
