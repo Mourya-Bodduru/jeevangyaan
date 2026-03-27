@@ -1,0 +1,286 @@
+.module-detail-container {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.back-btn-container {
+    margin-bottom: 20px;
+}
+
+.module-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.module-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.module-header .category-badge {
+    background: #e0f7fa;
+    color: #006064;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 1px solid #b2ebf2;
+}
+
+.module-content-wrapper {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px #000;
+}
+
+.video-section {
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    border-radius: 8px;
+    overflow: hidden; /* This acts as the crop boundary */
+    border: 2px solid #eee;
+}
+
+/* Cropper container to offset the iframe upwards only */
+.video-cropper {
+    position: absolute;
+    top: -60px; /* Hide the top bar (title/channel/share) */
+    left: 0;
+    width: 100%;
+    height: calc(100% + 60px); /* Taller only to push title bar out */
+}
+
+.video-section iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Fullscreen styles for the container */
+.video-section:fullscreen {
+    padding-bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+}
+
+.video-section:fullscreen .video-cropper {
+    height: calc(100% + 120px); /* Adjust crop for fullscreen */
+    top: -60px;
+}
+
+/* Custom Fullscreen Button */
+.custom-fullscreen-btn {
+    position: absolute;
+    bottom: 50px; /* sit above the controls bar */
+    right: 12px;
+    z-index: 25;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.2s;
+}
+
+.custom-fullscreen-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.video-section:fullscreen .custom-fullscreen-btn {
+    bottom: 40px;
+    right: 40px;
+}
+
+/* Overlay to block interaction with the top area (just in case) */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    z-index: 21; /* Above custom fullscreen button */
+    pointer-events: auto;
+    background: transparent;
+}
+
+/* Overlay to block BOTH bottom YouTube UI elements:
+   - bottom-left: link/share icon
+   - bottom-right: 'Watch on YouTube' button
+   Only covers the very bottom strip where those icons appear.
+   The controls bar (play, timeline, volume) remains usable below. */
+.video-bottom-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Covers the full bottom bar height */
+    z-index: 22;
+    pointer-events: auto;
+    background: #000; /* Solid black to completely hide both icons */
+    cursor: default;
+}
+
+.video-section:fullscreen .video-overlay {
+    height: 60px;
+}
+
+.video-section:fullscreen .video-bottom-overlay {
+    width: 100%;
+    height: 70px;
+}
+
+.text-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 40px;
+    white-space: pre-wrap;
+    /* Preserves newlines */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.ai-story-section {
+    background: #f3e5f5;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #9c27b0;
+}
+
+.ai-story-section h3 {
+    margin-top: 0;
+    color: #7b1fa2;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ai-story-section p {
+    color: #4a148c;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.story-content {
+    line-height: 1.8;
+    color: #334155;
+    font-size: 1.1rem;
+}
+
+.story-content h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #5b21b6;
+    font-size: 1.4rem;
+    border-bottom: 2px dashed #d8b4fe;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.story-content p {
+    margin-bottom: 15px;
+    color: #334155;
+    font-size: 1.1rem;
+    font-style: normal;
+}
+
+.story-content strong {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+
+/* Action Buttons */
+.action-buttons {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mark-complete-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: #4f46e5;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.4);
+}
+
+.mark-complete-btn:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px -1px rgba(79, 70, 229, 0.5);
+}
+
+.mark-complete-btn.completed {
+    background: #10b981;
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+}
+
+@media (max-width: 768px) {
+    .module-detail-container {
+        padding: 20px 15px;
+    }
+
+    .module-content-wrapper {
+        padding: 25px 20px;
+    }
+
+    .module-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .action-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .module-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .text-content {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .ai-story-section {
+        padding: 15px;
+    }
+
+    .ai-story-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .mark-complete-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

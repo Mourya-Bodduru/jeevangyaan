@@ -1,0 +1,216 @@
+.leaderboard-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.leaderboard-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.leaderboard-header h1 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.leaderboard-header p {
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+.leaderboard-table-wrapper {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 20px;
+    text-align: left;
+}
+
+.leaderboard-table th {
+    background: #f9fafb;
+    color: #6b7280;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.leaderboard-table tr:not(:last-child) td {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.rank-cell {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    width: 80px;
+    color: #6b7280;
+}
+
+.rank-1 .rank-cell {
+    color: #d97706;
+    text-shadow: 0 2px 4px rgba(217, 119, 6, 0.2);
+}
+
+.rank-2 .rank-cell {
+    color: #9ca3af;
+    text-shadow: 0 2px 4px rgba(156, 163, 175, 0.2);
+}
+
+.rank-3 .rank-cell {
+    color: #b45309;
+    text-shadow: 0 2px 4px rgba(180, 83, 9, 0.2);
+}
+
+.user-cell {
+    width: 40%;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+.admin-badge {
+    font-size: 0.7rem;
+    background: #eff6ff;
+    color: #3b82f6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 2px;
+    font-weight: 600;
+    display: inline-block;
+    width: fit-content;
+}
+
+.score-cell {
+    font-weight: 700;
+    color: #4f46e5;
+    font-size: 1.1rem;
+}
+
+.modules-cell {
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.empty-state {
+    text-align: center;
+    color: #6b7280;
+    padding: 40px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .leaderboard-container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .leaderboard-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .leaderboard-table th:nth-child(4),
+    .leaderboard-table td:nth-child(4) {
+        display: none;
+        /* Hide Modules column on mobile */
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 15px 10px;
+    }
+
+    .user-info {
+        gap: 10px;
+    }
+
+    .user-avatar-placeholder {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+}
+
+/* Current User Highlight */
+.current-user-highlight {
+    background-color: #e0e7ff !important;
+    border-left: 5px solid #4f46e5;
+    position: relative;
+    animation: highlightPulse 2s infinite;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+.current-user-highlight td {
+    color: #3730a3;
+    font-weight: 600;
+}
+
+.current-user-highlight .rank-cell {
+    color: #4f46e5;
+}
+
+@keyframes highlightPulse {
+    0% {
+        background-color: #e0e7ff;
+    }
+
+    50% {
+        background-color: #c7d2fe;
+    }
+
+    100% {
+        background-color: #e0e7ff;
+    }
+}

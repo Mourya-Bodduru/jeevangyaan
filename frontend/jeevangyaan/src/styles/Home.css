@@ -1,12 +1,15 @@
+/* ---------------- GLOBAL ---------------- */
+* {
+  box-sizing: border-box;
+}
+
 .hero {
   position: relative;
   text-align: center;
-  padding: 100px 20px;
-  background-image: url('../assets/home.jpg');
+  padding: 120px 20px;
+  background-image: url("../assets/home.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
-  border-bottom: 1px solid black;
   overflow: hidden;
 }
 
@@ -14,7 +17,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.8); /* adjust opacity here */
+  background: rgba(255, 255, 255, 0.8);
   z-index: 1;
 }
 
@@ -23,8 +26,9 @@
   z-index: 2;
 }
 
+/* ---------------- HERO ---------------- */
 .hero h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 700;
 }
 
@@ -35,9 +39,8 @@
 .hero p {
   max-width: 700px;
   margin: 20px auto;
-  font-size: 1.1rem;
-  color: black;
-  font-weight: bold;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-weight: 600;
 }
 
 .hero-buttons {
@@ -45,11 +48,16 @@
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .features {
-  padding: 80px 50px;
+  padding: 80px 20px;
   text-align: center;
+}
+
+.features h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 
 .features h2 span {
@@ -57,17 +65,19 @@
 }
 
 .feature-cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
   margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
-  width: 300px;
   padding: 30px;
   border-radius: 15px;
-  border: 2px solid #000000;
+  border: 2px solid #000;
   background: #fff;
   box-shadow: #000 3px 3px 0px;
   transition: all 0.25s ease;
@@ -75,43 +85,94 @@
 
 .card:hover {
   box-shadow: none;
-  transform: translateY(1px);
+  bottom: 10px;
+  transform: translateY(2px);
 }
+
+/* ---------------- CTA ---------------- */
 .call-to-action {
   background: #f1750f;
   text-align: center;
-  padding: 60px 20px;
-  margin-top: 50px;
+  padding: 70px 20px;
 }
 
 .call-to-action h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 20px;
-  color:#000;
+  color: #000;
 }
 
 .call-to-action p {
   max-width: 700px;
   margin: 0 auto;
   font-size: 1.1rem;
-  color: black;
 }
 
 .btn-action {
   display: inline-block;
   margin-top: 30px;
-  padding: 10px 25px;
-  background: #ffffff;
-  color: #000000;
+  padding: 12px 30px;
+  background: #fff;
+  color: #000;
   font-weight: bold;
   border-radius: 30px;
   text-decoration: none;
+  border: 2px solid #000;
   box-shadow: #000 3px 3px 0px;
   transition: all 0.25s ease;
-  border: 2px solid #000;;
 }
 
 .btn-action:hover {
   box-shadow: none;
-  transform: translateY(1px);
+  transform: translateY(2px);
 }
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 40px;
+  }
+
+  .features {
+    padding: 60px 15px;
+  }
+
+  .feature-cards {
+    gap: 20px;
+  }
+}
+
+/* ---------------- SMALL MOBILE ---------------- */
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-buttons {
+    padding: 0 10px;
+  }
+
+  .card {
+    padding: 25px 15px;
+  }
+
+  .call-to-action h2 {
+    font-size: 1.6rem;
+  }
+}
+

@@ -1,0 +1,516 @@
+.community-container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+.community-header {
+    text-align: center;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 60px 40px;
+    border-radius: 24px;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.live-indicator {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4ade80;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+.community-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.create-post-toggle {
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 15px -3px rgba(244, 63, 94, 0.4);
+}
+
+.create-post-toggle:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(244, 63, 94, 0.4);
+}
+
+.post-form-card {
+    background: white;
+    padding: 35px 40px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    margin-bottom: 50px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    animation: slide-up 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.post-form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+}
+
+.post-form-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.post-create-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    box-shadow: none;
+}
+
+.post-form-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.post-input-title {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #0f172a;
+    border: 2px solid #f1f5f9;
+    border-radius: 14px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.post-input-title::placeholder {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.post-input-content {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.05rem;
+    color: #475569;
+    border: 2px solid #f1f5f9;
+    border-radius: 14px;
+    background: #f8fafc;
+    min-height: 180px;
+    resize: vertical;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.post-input-content::placeholder {
+    color: #94a3b8;
+}
+
+.post-input-title:focus,
+.post-input-content:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 25px;
+}
+
+.submit-post-btn {
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+}
+
+.submit-post-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 20px -5px rgba(99, 102, 241, 0.4);
+}
+
+.submit-post-btn:active {
+    transform: translateY(1px);
+}
+
+.date-section {
+    margin-bottom: 30px;
+}
+
+.date-header {
+    background: #f8fafc;
+    padding: 18px 25px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 15px;
+}
+
+.date-header:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.date-header h2 {
+    font-size: 1.1rem;
+    color: #475569;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.drop-icon {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    transition: transform 0.3s;
+}
+
+.drop-icon.up { transform: rotate(180deg); }
+
+.post-card {
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.post-card.own-post {
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.08);
+}
+
+.own-badge {
+    background: #6366f1;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 10px;
+    vertical-align: middle;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+.post-content-area {
+    padding: 25px;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.author-avatar {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.author-info { display: flex; flex-direction: column; }
+.author-name { font-weight: 700; color: #1e293b; font-size: 1.05rem; }
+.post-time { font-size: 0.8rem; color: #64748b; font-weight: 500; }
+
+.post-title {
+    font-size: 1.6rem;
+    color: #0f172a;
+    margin-bottom: 12px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.post-content {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.post-footer {
+    padding: 15px 25px;
+    background: #fcfdfe;
+    border-top: 1px solid #f1f5f9;
+}
+
+.post-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    color: #64748b;
+}
+
+.action-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.action-btn.active {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #2563eb;
+}
+
+.like-btn.active {
+    background: #fff1f2;
+    border-color: #fecdd3;
+    color: #e11d48;
+}
+
+.comments-dropdown {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 25px;
+    animation: slide-down 0.3s ease-out;
+}
+
+.comment-item {
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #edf2f7;
+}
+
+.comment-author { font-weight: 700; color: #334155; }
+.comment-content { margin: 8px 0; color: #475569; font-size: 0.95rem; }
+
+.comment-form {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.comment-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.comment-form input:focus {
+    border-color: #6366f1;
+    outline: none;
+}
+
+.comment-submit-btn {
+    background: #6366f1;
+    color: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    transition: transform 0.2s;
+}
+
+.comment-submit-btn:hover { transform: scale(1.05); }
+
+@keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-down {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsiveness Refinements */
+@media (max-width: 768px) {
+    .community-container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .community-header {
+        padding: 40px 20px;
+        border-radius: 18px;
+    }
+
+    .community-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .community-header p {
+        font-size: 0.95rem;
+    }
+
+    .post-card {
+        padding: 0; /* Let content-area handle it */
+    }
+
+    .post-content-area {
+        padding: 20px;
+    }
+
+    .post-title {
+        font-size: 1.3rem;
+    }
+
+    .post-content {
+        font-size: 0.95rem;
+    }
+
+    .post-footer {
+        padding: 12px 20px;
+    }
+
+    .action-btn {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+
+    .date-header {
+        padding: 15px 20px;
+    }
+
+    .date-header h2 {
+        font-size: 0.95rem;
+    }
+
+    .live-indicator {
+        top: 15px;
+        right: 15px;
+        padding: 4px 10px;
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .community-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .create-post-toggle {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .post-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .action-btn {
+        flex: 1;
+        justify-content: center;
+        min-width: 120px;
+    }
+
+    .comment-form {
+        flex-direction: column;
+    }
+
+    .comment-submit-btn {
+        width: 100%;
+        height: 45px;
+    }
+}
+

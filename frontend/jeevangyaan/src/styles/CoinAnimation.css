@@ -1,0 +1,78 @@
+.coin-animation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    pointer-events: none;
+    backdrop-filter: blur(2px);
+}
+
+.coin-animation-content {
+    text-align: center;
+    animation: pop-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.spinning-coin {
+    font-size: 5rem;
+    display: inline-block;
+    animation: coin-spin 1.5s infinite linear, coin-float 2s infinite ease-in-out;
+}
+
+.coin-text {
+    color: #ffd700;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px #ffd700;
+    margin-top: 20px;
+    animation: text-pulse 1s infinite alternate;
+}
+
+.stars-container {
+    margin-top: 15px;
+}
+
+.star {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin: 0 8px;
+    animation: star-twinkle 1s infinite alternate;
+}
+
+.star:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.star:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes pop-in {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes coin-spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+@keyframes coin-float {
+    0%, 100% { transform: translateY(0) rotateY(0deg); }
+    50% { transform: translateY(-20px) rotateY(180deg); }
+}
+
+@keyframes text-pulse {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes star-twinkle {
+    from { transform: scale(1); opacity: 0.5; }
+    to { transform: scale(1.3); opacity: 1; }
+}
