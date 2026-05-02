@@ -1,0 +1,78 @@
+[2026-03-28T15:38:36.265Z] ValidationError: User validation failed: password: Password must be at least 6 characters long
+Stack: ValidationError: User validation failed: password: Password must be at least 6 characters long
+    at Document.invalidate (D:\JeevanGyaan\backend\node_modules\mongoose\lib\document.js:3377:32)
+    at validatePath (D:\JeevanGyaan\backend\node_modules\mongoose\lib\document.js:3152:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 2)
+    at async model.$__validate (D:\JeevanGyaan\backend\node_modules\mongoose\lib\document.js:3093:3)
+    at async model.validate (D:\JeevanGyaan\backend\node_modules\mongoose\lib\document.js:2670:5)
+    at async model.validateBeforeSave (D:\JeevanGyaan\backend\node_modules\mongoose\lib\plugins\validateBeforeSave.js:34:7)
+    at async Kareem.execPre (D:\JeevanGyaan\backend\node_modules\kareem\index.js:65:24)
+    at async model.$__save (D:\JeevanGyaan\backend\node_modules\mongoose\lib\model.js:369:5)
+    at async model.save (D:\JeevanGyaan\backend\node_modules\mongoose\lib\model.js:609:5)
+
+[2026-03-28T15:38:42.427Z] ValidationError: User validation failed: password: Password must be at least 6 characters long
+Stack: ValidationError: User validation failed: password: Password must be at least 6 characters long
+    at Document.invalidate (D:\JeevanGyaan\backend\node_modules\mongoose\lib\document.js:3377:32)
+    at validatePath (D:\JeevanGyaan\backend\node_modules\mongoose\lib\document.js:3152:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 2)
+    at async model.$__validate (D:\JeevanGyaan\backend\node_modules\mongoose\lib\document.js:3093:3)
+    at async model.validate (D:\JeevanGyaan\backend\node_modules\mongoose\lib\document.js:2670:5)
+    at async model.validateBeforeSave (D:\JeevanGyaan\backend\node_modules\mongoose\lib\plugins\validateBeforeSave.js:34:7)
+    at async Kareem.execPre (D:\JeevanGyaan\backend\node_modules\kareem\index.js:65:24)
+    at async model.$__save (D:\JeevanGyaan\backend\node_modules\mongoose\lib\model.js:369:5)
+    at async model.save (D:\JeevanGyaan\backend\node_modules\mongoose\lib\model.js:609:5)
+
+[2026-04-21T15:04:59.785Z] MongoServerSelectionError: getaddrinfo ENOTFOUND ac-aixfizm-shard-00-01.qd4rzm1.mongodb.net
+Stack: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-aixfizm-shard-00-01.qd4rzm1.mongodb.net
+    at Topology.selectServer (D:\JeevanGyaan\backend\node_modules\mongodb\lib\sdam\topology.js:346:38)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:549:9)
+    at process.processTimers (node:internal/timers:523:7)
+    at async tryOperation (D:\JeevanGyaan\backend\node_modules\mongodb\lib\operations\execute_operation.js:150:18)
+    at async executeOperation (D:\JeevanGyaan\backend\node_modules\mongodb\lib\operations\execute_operation.js:80:16)
+    at async FindCursor._initialize (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:620:27)
+    at async FindCursor.fetchBatch (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:654:13)
+    at async FindCursor.next (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:326:17)
+
+[2026-04-22T07:58:09.597Z] MongoServerSelectionError: getaddrinfo ENOTFOUND ac-aixfizm-shard-00-00.qd4rzm1.mongodb.net
+Stack: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-aixfizm-shard-00-00.qd4rzm1.mongodb.net
+    at Topology.selectServer (D:\JeevanGyaan\backend\node_modules\mongodb\lib\sdam\topology.js:346:38)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:549:9)
+    at process.processTimers (node:internal/timers:523:7)
+    at async tryOperation (D:\JeevanGyaan\backend\node_modules\mongodb\lib\operations\execute_operation.js:150:18)
+    at async executeOperation (D:\JeevanGyaan\backend\node_modules\mongodb\lib\operations\execute_operation.js:80:16)
+    at async FindCursor._initialize (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:620:27)
+    at async FindCursor.fetchBatch (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:654:13)
+    at async FindCursor.next (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:326:17)
+
+[2026-04-22T07:58:41.257Z] MongoServerSelectionError: getaddrinfo ENOTFOUND ac-aixfizm-shard-00-00.qd4rzm1.mongodb.net
+Stack: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-aixfizm-shard-00-00.qd4rzm1.mongodb.net
+    at Topology.selectServer (D:\JeevanGyaan\backend\node_modules\mongodb\lib\sdam\topology.js:346:38)
+    at async tryOperation (D:\JeevanGyaan\backend\node_modules\mongodb\lib\operations\execute_operation.js:150:18)
+    at async executeOperation (D:\JeevanGyaan\backend\node_modules\mongodb\lib\operations\execute_operation.js:80:16)
+    at async FindCursor._initialize (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:620:27)
+    at async FindCursor.fetchBatch (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:654:13)
+    at async FindCursor.next (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:326:17)
+    at async [Symbol.asyncIterator] (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:254:34)
+    at async FindCursor.toArray (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:406:26)
+    at async model.Query._find (D:\JeevanGyaan\backend\node_modules\mongoose\lib\query.js:2436:14)
+
+[2026-04-22T07:58:48.311Z] MongoServerSelectionError: connect ETIMEDOUT 159.41.207.169:27017
+Stack: MongoServerSelectionError: connect ETIMEDOUT 159.41.207.169:27017
+    at Topology.selectServer (D:\JeevanGyaan\backend\node_modules\mongodb\lib\sdam\topology.js:346:38)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:549:9)
+    at process.processTimers (node:internal/timers:523:7)
+    at async tryOperation (D:\JeevanGyaan\backend\node_modules\mongodb\lib\operations\execute_operation.js:150:18)
+    at async executeOperation (D:\JeevanGyaan\backend\node_modules\mongodb\lib\operations\execute_operation.js:80:16)
+    at async FindCursor._initialize (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:620:27)
+    at async FindCursor.fetchBatch (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:654:13)
+    at async FindCursor.next (D:\JeevanGyaan\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:326:17)
+
