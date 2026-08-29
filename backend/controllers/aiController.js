@@ -14,7 +14,7 @@ export const chatWithAI = async (req, res, next) => {
         const modules = await Module.find().select('title description category');
 
         // Call our local FastAPI ML Service
-        const fastApiUrl = 'http://localhost:8002/chat-assist';
+        const fastApiUrl = process.env.FASTAPI_URL ? `${process.env.FASTAPI_URL}/chat-assist` : 'http://localhost:8002/chat-assist';
 
         console.log(`Sending chat to FastAPI for Semantic Search (Lang: ${lang || 'en'})`);
         const response = await axios.post(fastApiUrl, {
@@ -95,7 +95,8 @@ export const debateWithAI = async (req, res, next) => {
             return res.status(400).json({ success: false, error: "Topic and argument are required" });
         }
 
-        const fastApiUrl = 'http://localhost:8002/debate-assist';
+      const fastApiUrl = process.env.FASTAPI_URL ? `${process.env.FASTAPI_URL}/debate-assist` : 'http://localhost:8002/debate-assist';
+
 
         console.log(`Sending debate to FastAPI (Lang: ${language || 'en'})`);
         const response = await axios.post(fastApiUrl, {
