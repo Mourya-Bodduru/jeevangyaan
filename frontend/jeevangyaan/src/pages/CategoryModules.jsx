@@ -65,7 +65,7 @@ const CategoryModules = () => {
                             <li key={module._id} className="module-card" style={{ border: isCompleted ? '2px solid #10b981' : '1px solid #eee' }}>
                                 {module.image && (
                                     <div className="module-card-img" style={{ height: '180px', overflow: 'hidden', marginBottom: '15px', borderRadius: '8px' }}>
-                                        <img src={`http://localhost:8000${module.image}`} alt={module.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <img src={`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}${module.image}`} alt={module.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     </div>
                                 )}
                                 <h3>{module.title}</h3>
