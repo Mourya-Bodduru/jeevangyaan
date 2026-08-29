@@ -31,7 +31,7 @@ export const submitChallenge = async (req, res, next) => {
         }
 
         // 1. Send to AI for evaluation
-        const fastApiUrl = 'http://localhost:8002/chat-assist';
+       const fastApiUrl = process.env.FASTAPI_URL ? `${process.env.FASTAPI_URL}/chat-assist` : 'http://localhost:8002/chat-assist';
         const evaluationPrompt = `The user is submitting proof of a real-world action they took for a life skills module. Review their submission and give them encouraging, constructive feedback in 2-3 sentences. If it sounds completely irrelevant, gently let them know. User Submission: "${challengeText}"`;
 
         let aiFeedback = "Great job! Keep practicing your skills in the real world.";
