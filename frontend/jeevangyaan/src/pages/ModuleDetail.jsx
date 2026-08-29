@@ -269,7 +269,7 @@ const ModuleDetail = () => {
             <div className="module-content-wrapper">
                 {module.image && (
                     <div className="module-banner-image" style={{ marginBottom: '30px', borderRadius: '8px', overflow: 'hidden', maxHeight: '400px' }}>
-                        <img src={`http://localhost:8000${module.image}`} alt={module.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src={`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}${module.image}`} alt={module.title}style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                 )}
  
