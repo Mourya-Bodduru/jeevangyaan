@@ -48,7 +48,7 @@ export const simulateScenario = async (req, res, next) => {
         }
 
         // Call the FastAPI ML Service Dedicated Scenario Endpoint
-        const fastApiUrl = 'http://localhost:8002/scenario-assist';
+        const fastApiUrl = process.env.FASTAPI_URL ? `${process.env.FASTAPI_URL}/scenario-assist` : 'http://localhost:8002/scenario-assist';
 
         const response = await axios.post(fastApiUrl, {
             message: message,
@@ -74,7 +74,7 @@ export const evaluateScenario = async (req, res, next) => {
     try {
         const { history, lang } = req.body;
 
-        const fastApiUrl = 'http://localhost:8002/scenario-evaluate';
+        const fastApiUrl = process.env.FASTAPI_URL ? `${process.env.FASTAPI_URL}/scenario-evaluate` : 'http://localhost:8002/scenario-evaluate';
 
         const response = await axios.post(fastApiUrl, {
             message: "EVALUATE", // Dummy message, only history matters
