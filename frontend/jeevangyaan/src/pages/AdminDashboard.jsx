@@ -203,7 +203,7 @@ const AdminDashboard = () => {
                                 <div key={module._id} className="admin-module-card">
                                     <div className="admin-card-image">
                                         {module.image ? (
-                                            <img src={`http://localhost:8000${module.image}`} alt={module.title} />
+                                            <img src={`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}${module.image}`} alt={module.title} />
                                         ) : (
                                             <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ccc' }}>No Image</div>
                                         )}
