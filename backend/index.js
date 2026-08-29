@@ -16,7 +16,7 @@ import uiTranslationRoutes from './routes/uiTranslationRoutes.js';
 import userRequestRoutes from './routes/userRequestRoutes.js';
 import scenarioRoutes from './routes/scenarioRoutes.js';
 import challengeRoutes from './routes/challengeRoutes.js';
-import communityRoutes from './routes/communityRoutes.js';
+// import communityRoutes from './routes/communityRoutes.js';
 
 // ES6 module _dirname alternative
 const _filename = fileURLToPath(import.meta.url);
@@ -54,7 +54,7 @@ app.use('/api/translations/ui', uiTranslationRoutes);
 app.use('/api/requests', userRequestRoutes);
 app.use('/api/scenarios', scenarioRoutes);
 app.use('/api/challenges', challengeRoutes);
-app.use('/api/community', communityRoutes);
+// app.use('/api/community', communityRoutes);
 
 // 404 handler
 app.use((req, res, next) => {
