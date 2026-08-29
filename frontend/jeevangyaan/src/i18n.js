@@ -227,7 +227,9 @@ i18n.on('languageChanged', async (lng) => {
 
     try {
         // Fetch from our new dynamic proxy backend map
-        const response = await fetch(`http://localhost:8000/api/translations/ui?lang=${lng}`);
+        const baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+const response = await fetch(`${baseURL}/api/translations/ui?lang=${lng}`);
+
         const translations = await response.json();
 
         if (translations) {
