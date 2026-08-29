@@ -55,7 +55,7 @@ const Modules = () => {
             <li key={module._id} className="module-card" onClick={() => handleModuleClick(module._id)}>
               {module.image && (
                 <div className="module-card-img" style={{ height: '200px', overflow: 'hidden', marginBottom: '15px', borderRadius: '8px 8px 0 0', margin: '-25px -25px 15px -25px' }}>
-                  <img src={`http://localhost:8000${module.image}`} alt={module.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}${module.image}`} alt={module.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
               )}
               <div className="module-card-content">
