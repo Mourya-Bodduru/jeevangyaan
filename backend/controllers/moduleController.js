@@ -9,7 +9,8 @@ export const generateModuleStory = async (req, res) => {
             return res.status(404).json({ success: false, error: 'Module not found' });
         }
 
-        const fastApiUrl = 'http://localhost:8002/generate-story';
+        const fastApiUrl = process.env.FASTAPI_URL || 'http://localhost:8002/generate-story';
+
         console.log("Sending module content to FastAPI ML Service...");
 
         const fullContext = `Title: ${module.title}\nDescription: ${module.description}\n\nContent details:\n${module.content}`;
